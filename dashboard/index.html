@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — Night Ops: pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="pulse" aria-hidden="true"></span><span class="brand-name">TOKEN RADAR</span><span class="brand-sub">NIGHT OPS // PRE-TOKEN SCAN</span></div>
+  <div class="top-meta"><span id="meta-asof">Snapshot —</span><span>DefiLlama protocol index</span><span id="meta-model">radar-2 model</span></div>
+</header>
+<main id="app" aria-busy="true">
+  <section class="kpis" id="kpis" aria-label="Board totals"></section>
+  <section class="panel filters" aria-label="Filters">
+    <div class="field grow"><label for="q">Search</label><input type="search" id="q" placeholder="Name, slug, category or chain" autocomplete="off"></div>
+    <div class="field"><label for="category">Category</label><select id="category"></select></div>
+    <div class="field"><label for="chain">Chain</label><select id="chain"></select></div>
+    <div class="field"><label for="floor">TVL at least</label><select id="floor">
+      <option value="0">Any TVL</option><option value="50000000">$50M (watchlist floor)</option>
+      <option value="100000000">$100M</option><option value="500000000">$500M</option><option value="1000000000">$1B</option>
+    </select></div>
+    <div class="field"><label for="sort">Sort by</label><select id="sort">
+      <option value="implied">Implied value</option><option value="tvl">TVL</option>
+      <option value="growth">7-day growth</option><option value="age">Age</option><option value="tge">TGE odds</option><option value="name">Name</option>
+    </select></div>
+    <div class="field check"><label class="toggle"><input type="checkbox" id="watchlist"><span>Watchlist only</span></label></div>
+    <div class="field tabs" role="group" aria-label="Token status">
+      <button type="button" id="tab-pre" aria-pressed="true">Pre-token</button>
+      <button type="button" id="tab-live" aria-pressed="false">Live token</button>
+    </div>
+    <span class="count" id="count"></span>
+  </section>
+  <section id="board" aria-label="Ranked board"></section>
+  <section class="panel checks" id="checks" aria-label="Self-checks"></section>
+  <section class="panel method" id="method" aria-label="Methodology"></section>
+</main>
+<footer class="foot">
+  <p>Every number on this page is in the sealed snapshot or computed from its figures by one function. Costs and times in the farm plans are plan estimates, labelled as such. Implied value is a model, not a price, and never a promise a token launches.</p>
+  <p id="foot-source"></p>
+</footer>
+<dialog class="detail" id="detail" aria-labelledby="detail-title"></dialog>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
